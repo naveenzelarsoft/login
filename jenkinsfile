@@ -3,6 +3,14 @@ pipeline {
              label 'dev'
           }
     stages {
+     stage ('Get Dependencies'){
+     steps{
+          sh '''
+          go get 
+          '''
+         }
+      }
+
       stage ('Build Packages'){
       steps {
           sh '''
