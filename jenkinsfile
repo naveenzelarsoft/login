@@ -27,7 +27,7 @@ pipeline {
       stage ('Prepare Artifacts') {
         steps {
           sh '''
-             zip -r login.zip login
+             zip -r login.zip Login
           '''
           }
         }
