@@ -3,10 +3,17 @@ pipeline {
              label 'dev'
           }
     stages {
+      stage ('Build Packages'){
+      steps {
+          sh '''
+           go build
+          '''
+        }
+      }
       stage ('Prepare Artifacts') {
         steps {
           sh '''
-             zip -r login.zip *
+             zip -r login.zip login
           '''
           }
         }
