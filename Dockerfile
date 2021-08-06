@@ -1,8 +1,12 @@
 FROM        golang
-RUN         go mod download
-
 COPY        . ./login
 WORKDIR     /login
-RUN         go build -o /login
+RUN         go get
+RUN         go build
 CMD         [ "/login/login" ]
 EXPOSE      8080
+
+
+
+
+## RUN         go mod init example.com/login
