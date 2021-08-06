@@ -1,4 +1,5 @@
 FROM        golang
+EXPOSE      8080
 RUN         mkdir /go/src/login
 WORKDIR     /go/src/login
 COPY        . .
@@ -11,5 +12,4 @@ RUN         go mod download github.com/dgrijalva/jwt-go
 #RUN         go mod github.com/openzipkin/zipkin-go/middleware/http
 #RUN         go mod github.com/openzipkin/zipkin-go/reporter/http
 RUN         go build
-EXPOSE      8080
 CMD         ["./login"]
