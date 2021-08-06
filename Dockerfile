@@ -33,6 +33,6 @@ COPY        . /go/src/
 WORKDIR     /go/src/
 RUN         go mod init login
 RUN         go get && go build
-CMD         [ "login" ]
 EXPOSE      8080
+CMD         [ "login" ]
 
