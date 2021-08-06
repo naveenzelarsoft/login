@@ -3,7 +3,7 @@ RUN         mkdir /login
 COPY        . /login
 WORKDIR     /login
 RUN         go get github.com/dgrijalva/jwt-go && go get github.com/labstack/echo && go get github.com/labstack/echo/middleware && go get github.com/labstack/gommon/log && go get github.com/openzipkin/zipkin-go && go get github.com/openzipkin/zipkin-go/middleware/http && go get github.com/openzipkin/zipkin-go/reporter/http
-RUN         go mod init
+RUN         go mod download
 RUN         go build
 CMD         [ "/login/login" ]
 EXPOSE      8080
