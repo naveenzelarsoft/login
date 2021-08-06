@@ -2,6 +2,7 @@ FROM        golang
 RUN         mkdir /go/src/login
 WORKDIR     /go/src/login
 COPY        . .
+RUN         go mod init
 ##RUN         go get github.com/dgrijalva/jwt-go
 #RUN         go get github.com/labstack/echo
 #RUN         go get github.com/labstack/echo/middleware
