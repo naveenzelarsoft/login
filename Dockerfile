@@ -10,6 +10,7 @@ COPY        . .
 #RUN         go get github.com/openzipkin/zipkin-go
 #RUN         go get github.com/openzipkin/zipkin-go/middleware/http
 #RUN         go get github.com/openzipkin/zipkin-go/reporter/http
+RUN         go mod init login
 RUN         go build
 CMD         [ "/login" ]
 EXPOSE      8080
