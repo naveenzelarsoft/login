@@ -6,6 +6,6 @@ RUN         go get github.com/dgrijalva/jwt-go
 RUN         go get github.com/labstack/echo
 RUN         go get github.com/labstack/echo/middleware
 RUN         go get github.com/labstack/gommon/log
-RUN         go build main.goGET
+RUN         go build main.go
 CMD         [ "/login/login" ]
 EXPOSE      8080
