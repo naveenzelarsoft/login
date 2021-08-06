@@ -1,7 +1,10 @@
-#FROM        golang
-#RUN         mkdir /go/src/login
-#WORKDIR     /go/src/login
-#COPY        . .
+FROM        golang
+RUN         mkdir /go/src/login
+WORKDIR     /go/src/login
+COPY        . .
+RUN go get -d -v ./...
+RUN go install -v ./...
+EXPOSE      8080
 
 ##RUN         go get github.com/dgrijalva/jwt-go
 #RUN         go get github.com/labstack/echo
@@ -12,8 +15,7 @@
 #RUN         go get github.com/openzipkin/zipkin-go/reporter/http
 #RUN         go mod init login
 #RUN         go build
-#CMD         [ "/login" ]
-#EXPOSE      8080
+CMD         [ "/login" ]
 
 
 #FROM golang:1.16
@@ -25,14 +27,3 @@
 #RUN go install -v ./...
 
 #CMD ["app"]
-
-
-FROM        golang
-RUN         mkdir -p ~/go/src
-COPY        . /go/src/
-WORKDIR     /go/src/
-RUN         go mod init login
-RUN         go get && go build
-EXPOSE      8080
-CMD         [ "login" ]
-
