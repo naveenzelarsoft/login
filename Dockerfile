@@ -1,5 +1,5 @@
 FROM        golang
-RUN         mkdir /login
+RUN         mkdir /go/src/login
 WORKDIR     /go/src/login
 COPY        . .
 
