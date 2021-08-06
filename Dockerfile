@@ -2,10 +2,6 @@ FROM        golang
 RUN         mkdir /go/src/login
 WORKDIR     /go/src/login
 COPY        . .
-RUN go get -d -v ./...
-RUN go install -v ./...
-EXPOSE      8080
-
 ##RUN         go get github.com/dgrijalva/jwt-go
 #RUN         go get github.com/labstack/echo
 #RUN         go get github.com/labstack/echo/middleware
@@ -14,7 +10,8 @@ EXPOSE      8080
 #RUN         go get github.com/openzipkin/zipkin-go/middleware/http
 #RUN         go get github.com/openzipkin/zipkin-go/reporter/http
 #RUN         go mod init login
-#RUN         go build
+RUN         go build
+EXPOSE      8080
 CMD         [ "/login" ]
 
 
