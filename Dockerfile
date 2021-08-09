@@ -1,4 +1,4 @@
-FROM        golang:1.16-alpine
+FROM        golang
 EXPOSE      8080
 RUN         mkdir /go/src/login
 WORKDIR     /go/src/login
