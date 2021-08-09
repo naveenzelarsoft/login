@@ -6,6 +6,6 @@ COPY        . .
 RUN         go mod init
 RUN         go mod download github.com/dgrijalva/jwt-go
 RUN         go get login
-RUN         go build
+RUN         go build -o login
 #CMD         ["./login"]
 ENTRYPOINT   [ "/go/src/login/login" ]
