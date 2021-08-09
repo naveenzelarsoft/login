@@ -20,4 +20,4 @@ RUN dep ensure
 
 RUN go build -o login
 
-CMD         ["/login"]
+CMD         ["/go/src/app/./login"]
