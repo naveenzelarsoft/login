@@ -6,7 +6,6 @@
 #RUN         go mod init
 #RUN         go mod download github.com/dgrijalva/jwt-go
 #RUN         go build
-#CMD         ["./login"]
 
 FROM golang:1.9-alpine
 
@@ -21,4 +20,4 @@ RUN dep ensure
 
 RUN go build -o login
 
-CMD /go/src/app/login
+CMD         ["/login"]
