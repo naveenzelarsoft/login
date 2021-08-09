@@ -22,4 +22,5 @@ COPY        / .
 RUN         go mod init example.com/login
 RUN         go get
 RUN         go build
-CMD         ["login"]
+EXPOSE      8080
+CMD         ["./login"]
